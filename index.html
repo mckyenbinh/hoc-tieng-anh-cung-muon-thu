@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tớ và Cậu học tiếng Anh cùng muông thú</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@500;700&display=swap&subset=vietnamese">
+<style>
+:root{--bg:#fff8e7;--ink:#2b2a33;--card:#fff;--muted:#6b6877;--sad:#fde8e8;--sadink:#7a1f2b;--sadline:#c0392b;--good:#e3f6e8;--eco:#e6f0ff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1b26;--ink:#f6f2ea;--card:#2a2736;--muted:#b4afc2;--sad:#3a1f26;--sadink:#ffd5d9;--sadline:#e8707a;--good:#1f3a2a;--eco:#1f2d4a}}
+:root[data-theme="dark"]{--bg:#1d1b26;--ink:#f6f2ea;--card:#2a2736;--muted:#b4afc2;--sad:#3a1f26;--sadink:#ffd5d9;--sadline:#e8707a;--good:#1f3a2a;--eco:#1f2d4a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito",system-ui,sans-serif;font-size:17px;line-height:1.55}
+h1,h2,h3,.big{font-family:"Baloo 2","Nunito",system-ui,sans-serif;line-height:1.15;margin:0}
+header{padding:28px 18px 8px;text-align:center;max-width:760px;margin:0 auto}
+h1{font-size:clamp(30px,8vw,48px);font-weight:800}
+header p{margin:10px 0 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:760px;margin:18px auto;padding:0 16px}
+@media(min-width:620px){.grid{grid-template-columns:repeat(4,1fr)}}
+.tile{border:0;border-radius:28px;padding:18px 8px 14px;cursor:pointer;color:#2b2a33;font:inherit;display:flex;flex-direction:column;align-items:center;gap:6px;min-height:150px;transition:transform .15s}
+.tile:active{transform:scale(.94)}
+.tile:focus-visible,.btn:focus-visible,.x:focus-visible{outline:4px solid #2b2a33;outline-offset:3px}
+.tile .e{font-size:62px;line-height:1}
+.tile .n{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:20px}
+.tile .v{font-size:14px;opacity:.75}
+.foot{max-width:640px;margin:10px auto 40px;padding:0 18px;color:var(--muted);font-size:14px;text-align:center}
+#ov{position:fixed;inset:0;background:rgba(20,18,30,.55);display:none;z-index:20}
+#ov.on{display:block}
+#sheet{position:absolute;left:0;right:0;bottom:0;top:6vh;max-width:640px;margin:0 auto;background:var(--bg);border-radius:32px 32px 0 0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:18px 18px calc(36px + env(safe-area-inset-bottom,0px));animation:up .25s ease-out}
+@keyframes up{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){#sheet{animation:none}.tile{transition:none}}
+.x{position:sticky;top:0;float:right;width:48px;height:48px;border-radius:50%;border:0;background:var(--card);color:var(--ink);font-size:24px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.hero{text-align:center;border-radius:28px;padding:20px 12px;color:#2b2a33;clear:both}
+.hero .e{font-size:92px;line-height:1}
+.hero .big{font-size:clamp(40px,12vw,64px);font-weight:800}
+.ipa{font-size:18px;opacity:.8}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;background:#2b2a33;color:#fff;font:800 20px "Baloo 2",sans-serif;padding:10px 24px;margin-top:10px;cursor:pointer;min-height:48px}
+.vi{font-size:20px;font-weight:700;margin-top:6px}
+.say{margin-top:12px;font-size:18px;font-weight:700}
+.box{border-radius:22px;padding:14px 16px;margin-top:14px;background:var(--card)}
+.box h3{font-size:21px;margin-bottom:4px}
+.box.eco{background:var(--eco)}.box.good{background:var(--good)}
+.box.sad{background:var(--sad);color:var(--sadink);border-left:8px solid var(--sadline)}
+.box.sad h3{color:var(--sadink)}
+.badge{display:inline-block;border-radius:999px;padding:3px 12px;font-weight:800;font-size:15px;color:#fff;background:#b9770e}
+.badge.cr{background:#b3261e}.badge.en{background:#c2561a}.badge.vu{background:#8a6d00}
+.num{font-family:"Baloo 2",sans-serif;font-size:30px;font-weight:800}
+.box ul{margin:6px 0 0;padding-left:22px}
+.box li{margin:6px 0}
+.src{font-size:13px;color:var(--muted);margin-top:14px}
+.ic{width:1em;height:1em;display:inline-block;vertical-align:middle}
+.tools{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.btn.alt{background:#fff;color:#2b2a33;border:3px solid #2b2a33}
+.qh{font:800 18px "Baloo 2",sans-serif;padding:12px 0}
+.opts{display:grid;gap:10px;margin-top:14px}.opts.pics{grid-template-columns:repeat(3,1fr)}
+.opt{border:3px solid transparent;border-radius:20px;background:var(--card);color:var(--ink);font:800 20px "Baloo 2",sans-serif;padding:12px;min-height:56px;cursor:pointer}
+.opts.pics .opt{font-size:54px;line-height:1.1}
+.opt.ok{background:#b7e4c7;color:#12331f;border-color:#2d6a4f}.opt.no{background:#f8b4b4;color:#4a1010;border-color:#c0392b}
+.msg{font:800 22px "Baloo 2",sans-serif;text-align:center;margin-top:14px}
+</style>
+</head>
+<body>
+<header>
+<h1>🌍 Tớ và Cậu học tiếng Anh cùng muông thú</h1>
+<p>Cậu bấm vào một bạn động vật nhé! Tớ sẽ đọc tên tiếng Anh, kể xem bạn ấy còn bao nhiêu và vì sao chúng mình cần bảo vệ bạn ấy.</p>
+<div class="tools"><button class="btn" id="qbtn" style="margin-top:0">🎮 Chơi đố vui</button></div>
+</header>
+<main class="grid" id="grid"></main>
+<p class="foot">Dành cho bé cùng người lớn đọc. Số liệu là ước tính gần đây từ các tổ chức bảo tồn (IUCN, WWF) và có thể thay đổi theo thời gian. Một số phần “Điều buồn” nói về việc con người làm hại động vật, bố mẹ nên đọc cùng bé.</p>
+
+<div id="ov" role="dialog" aria-modal="true" aria-label="Thông tin loài"><div id="sheet"></div></div>
+
+<script>
+var A=[
+{id:"tiger",e:"🐅",en:"Tiger",ipa:"/ˈtaɪɡər/",vi:"Con hổ",c:"#ffd166",st:"Nguy cấp",k:"en",
+ pop:"khoảng 4.500 con",pn:"Hơn 100 năm trước, thế giới có khoảng 100.000 con hổ hoang dã. Bây giờ chỉ còn chừng này thôi!",
+ say:"The tiger is a big cat with stripes.",
+ eco:"Hổ là “ông chủ” của khu rừng. Hổ giữ cho số lượng hươu, nai, lợn rừng không quá đông. Nếu hổ biến mất, các bạn ăn cỏ sẽ ăn hết cây non, rừng yếu đi và nguồn nước cũng bị ảnh hưởng.",
+ truth:["Có người tin rằng “cao hổ” (cao nấu từ xương hổ) hay rượu ngâm xương hổ là thuốc bổ. Điều đó không đúng: các nhà khoa học nói xương hổ không có tác dụng chữa bệnh nào cả.","Vì niềm tin sai ấy, kẻ săn trộm đặt bẫy sập và bẫy dây thép trong rừng. Hổ bị mắc bẫy, đau đớn rất lâu rồi bị giết chỉ để lấy xương và da.","Ở một số nơi, hổ còn bị nhốt trong các trại nuôi để lấy xương. Đó là sự tàn nhẫn, và còn khiến việc buôn bán hổ tiếp tục.","Ở Việt Nam, hổ hoang dã gần như đã không còn. Hổ cũng cần những khu rừng để sống, nhưng rừng thì ngày càng bị thu hẹp."]},
+{id:"elephant",e:"🐘",en:"Elephant",ipa:"/ˈelɪfənt/",vi:"Con voi",c:"#cdb4db",st:"Nguy cấp",k:"en",
+ pop:"khoảng 50.000 con voi châu Á",pn:"Voi châu Á từng đông hơn rất nhiều. Voi châu Phi cũng giảm mạnh vì bị săn lấy ngà.",
+ say:"The elephant has a long trunk.",
+ eco:"Voi là “người làm vườn của rừng”. Voi ăn quả rồi rải hạt giống đi khắp nơi, giúp cây mới mọc lên. Voi còn mở đường và đào hố nước cho các bạn thú nhỏ. Voi biến mất thì rừng cũng mất đi những người bạn giúp việc.",
+ truth:["Voi bị giết để lấy ngà. Ngà voi là chiếc răng dài của voi, và voi cần nó để đào, ăn và tự vệ. Con người lấy ngà làm đồ trang sức và vật trưng bày.","Khi voi mẹ bị giết, voi con ở lại một mình và rất khó sống sót.","Ở một số nơi, voi con bị bắt khỏi mẹ và bị “huấn luyện” bằng cách làm đau để chúng sợ và phải vâng lời. Voi là loài thông minh, biết nhớ và biết thương nhớ nhau, không nên bị ép làm trò mua vui.","Voi cũng mất nhà vì rừng bị chặt để làm đường và nương rẫy."]},
+{id:"shark",e:"🦈",en:"Shark",ipa:"/ʃɑːrk/",vi:"Cá mập",c:"#a9def9",st:"Nhiều loài bị đe dọa",k:"en",
+ pop:"giảm hơn 70% từ năm 1970",pn:"Các nhà khoa học thấy cá mập và cá đuối ở đại dương mở đã giảm hơn 70% trong khoảng 50 năm.",
+ say:"The shark swims in the ocean.",
+ eco:"Cá mập giống “cảnh sát biển”: chúng bắt những con cá yếu hoặc bệnh, giữ cho đại dương cân bằng. Thiếu cá mập, các loài cá nhỏ phát triển quá nhiều, san hô và cỏ biển bị ăn hết, và cả đại dương bị ảnh hưởng.",
+ truth:["Có người tin rằng súp vi cá mập là món ăn bổ. Thực ra vi cá mập không có gì đặc biệt hơn thức ăn bình thường.","Một cách làm rất tàn nhẫn gọi là “cắt vây”: người ta cắt lấy vây rồi thả cá mập xuống biển khi vẫn còn sống. Không có vây, cá mập không bơi được nữa và chìm dần.","Mỗi năm có hàng chục triệu con cá mập bị giết, nhiều con chỉ vì cái vây của chúng.","Cá mập sinh con rất chậm, nên khi bị bắt quá nhiều thì rất khó hồi phục."]},
+{id:"rhino",e:"🦏",en:"Rhino",ipa:"/ˈraɪnoʊ/",vi:"Con tê giác",c:"#b8e0d2",st:"Nhiều loài nguy cấp",k:"cr",
+ pop:"khoảng 27.000 con (5 loài)",pn:"Có loài chỉ còn vài chục con. Tê giác Java ở Việt Nam đã bị săn đến mức biến mất vào năm 2010.",
+ say:"The rhino has a horn on its nose.",
+ eco:"Tê giác ăn cỏ và cây thấp, giúp đồng cỏ và rừng được thông thoáng. Chúng cũng tạo ra những vũng bùn là chỗ tắm và uống nước cho nhiều loài khác.",
+ truth:["Sừng tê giác làm từ chất sừng (keratin), giống móng tay và tóc của chúng mình. Nhưng nhiều người lại tin nó chữa được bệnh. Nó không hề chữa bệnh.","Kẻ săn trộm giết tê giác chỉ để cắt lấy chiếc sừng, rồi bỏ lại cơ thể ngoài đồng.","Vì vậy, nhiều người bảo vệ rừng phải cưa sừng tê giác còn sống để bảo vệ chúng khỏi bọn săn trộm. Đó là điều rất buồn."]},
+{id:"panda",e:"🐼",en:"Giant panda",ipa:"/ˈdʒaɪənt ˈpændə/",vi:"Gấu trúc",c:"#e9e9f0",st:"Sắp nguy cấp",k:"vu",
+ pop:"khoảng 1.900 con",pn:"Gấu trúc đã từng nguy cấp hơn. Nhờ mọi người cùng bảo vệ rừng tre, số lượng đã tăng lên!",
+ say:"The panda eats bamboo.",
+ eco:"Rừng tre nơi gấu trúc sống cũng là nhà của nhiều loài khác như khỉ và chim quý. Bảo vệ gấu trúc cũng là bảo vệ cả khu rừng ấy.",
+ truth:null,
+ good:"Đây là một câu chuyện vui! Khi con người trồng lại rừng và bảo vệ nơi ở, gấu trúc đã đông lên. Cậu thấy không, chúng mình làm được đấy!"},
+{id:"turtle",e:"🐢",en:"Sea turtle",ipa:"/siː ˈtɜːrtl/",vi:"Rùa biển",c:"#caffbf",st:"Nhiều loài bị đe dọa",k:"en",
+ pop:"có loài chỉ còn rất ít",pn:"Rùa biển có 7 loài, và hầu hết đều bị đe dọa. Cứ khoảng 1.000 rùa con nở ra thì chỉ khoảng 1 con lớn được.",
+ say:"The sea turtle swims slowly.",
+ eco:"Rùa biển ăn sứa và cỏ biển, giúp biển sạch và khỏe. Nếu rùa mất đi, sứa quá nhiều và bãi cỏ biển là nơi cá con sinh sống bị hỏng.",
+ truth:["Có người săn rùa biển để lấy mai làm đồ trang sức, và nhặt trứng rùa để ăn.","Nhiều chú rùa nhầm túi nilon với con sứa và ăn phải, rồi bị ốm. Rùa còn mắc vào lưới đánh cá và không thể thở được.","Cậu có thể giúp bằng cách không xả rác ra biển và dùng ít nhựa hơn."]},
+{id:"bear",e:"🐻‍❄️",en:"Polar bear",ipa:"/ˈpoʊlər ber/",vi:"Gấu Bắc Cực",c:"#d6ecff",st:"Sắp nguy cấp",k:"vu",
+ pop:"khoảng 26.000 con",pn:"Băng ở Bắc Cực đang tan dần, nên gấu có ít chỗ để săn hải cẩu hơn.",
+ say:"The polar bear lives on the ice.",
+ eco:"Gấu Bắc Cực đứng đầu chuỗi thức ăn ở vùng băng giá. Khi băng tan, cả chuỗi sống ở đó bị xáo trộn, từ hải cẩu cho đến cá nhỏ.",
+ truth:["Gấu Bắc Cực không bị đe dọa vì một món “bổ” nào, mà vì Trái Đất đang nóng lên. Khói từ xe cộ và nhà máy làm băng tan nhanh hơn.","Cậu có thể giúp bằng cách tắt đèn khi không dùng, đi bộ hoặc đi xe buýt cùng bố mẹ, và trồng thêm cây xanh."]},
+{id:"orangutan",e:"🦧",en:"Orangutan",ipa:"/əˈræŋətæn/",vi:"Đười ươi",c:"#ffc6a8",st:"Cực kỳ nguy cấp",k:"cr",
+ pop:"chưa đến 120.000 con (3 loài)",pn:"Rừng mưa của đười ươi ở Indonesia và Malaysia đang bị chặt để trồng cây lấy dầu cọ.",
+ say:"The orangutan lives in trees.",
+ eco:"Đười ươi ăn quả và rải hạt khắp rừng mưa nhiệt đới. Rừng mưa lại hút khí cacbonic và giữ cho Trái Đất mát hơn.",
+ truth:["Rừng bị đốt và chặt để trồng cọ dầu. Đười ươi mất nhà, mất thức ăn và đói dần.","Có kẻ giết đười ươi mẹ để bắt đười ươi con đem bán làm thú cưng. Con nhỏ ở lại không có mẹ thì rất khó sống.","Cậu có thể giúp bằng cách nhờ bố mẹ chọn các sản phẩm có dầu cọ được trồng bền vững."]},
+{id:"pangolin",e:"",svg:1,en:"Pangolin",ipa:"/ˈpæŋɡəlɪn/",vi:"Tê tê",c:"#f4c7ff",st:"Cực kỳ nguy cấp (một số loài)",k:"cr",
+ pop:"chưa ai đếm chính xác",pn:"Tê tê là loài thú bị buôn bán trái phép nhiều nhất thế giới. Việt Nam có tê tê Java và tê tê Trung Quốc, cả hai đều rất ít.",
+ say:"The pangolin has scales.",
+ eco:"Một con tê tê có thể ăn hàng triệu con kiến và mối mỗi năm. Chúng giúp cân bằng côn trùng và làm tơi xốp đất khi đào hang.",
+ truth:["Vảy tê tê cũng làm từ keratin, giống móng tay của chúng mình, nhưng nhiều người lại tin là thuốc quý. Điều đó không đúng.","Thịt tê tê bị coi là món ăn “sang”. Vì vậy, tê tê bị bắt, nhốt trong lồng chật chội, rồi bị đem đi bán lậu qua nhiều nước.","Khi gặp nguy hiểm, tê tê cuộn tròn lại. Cách tự vệ ấy giúp chống lại thú dữ nhưng lại khiến kẻ săn trộm dễ nhặt chúng lên.","Cậu hãy nhớ: không mua, không ăn, không dùng sản phẩm từ động vật hoang dã nhé."]}
+];
+A.push({id:"saola",e:"🦌",en:"Saola",ipa:"/ˈsaʊlə/",vi:"Sao la",c:"#ffe5a8",st:"Cực kỳ nguy cấp",k:"cr",
+ pop:"có thể chỉ còn vài chục con",pn:"Sao la được phát hiện ở rừng Vũ Quang, Việt Nam, năm 1992 và được gọi là “kỳ lân châu Á”. Rất ít người từng nhìn thấy bạn ấy ngoài rừng.",
+ say:"The saola is very shy.",
+ eco:"Sao la sống ở rừng sâu dãy Trường Sơn. Bảo vệ sao la cũng là bảo vệ cả khu rừng nguyên sinh, nơi có rất nhiều loài quý hiếm khác.",
+ truth:["Sao la không bị săn vì một món thuốc bổ nào. Bạn ấy thường bị mắc vào những chiếc bẫy dây thép mà thợ săn giăng để bắt hươu, nai và lợn rừng.","Có hàng nghìn chiếc bẫy giăng khắp rừng, nên sao la rất khó sống sót. Các cô chú kiểm lâm phải đi gỡ từng chiếc bẫy một.","Cậu nhớ nhé: giữ rừng sạch bẫy chính là giữ lấy bạn ấy."]},
+{id:"langur",e:"🐒",en:"Delacour’s langur",ipa:"/dəˈlɑːkʊrz ˈlæŋɡər/",vi:"Voọc mông trắng",c:"#ffd6e0",st:"Cực kỳ nguy cấp",k:"cr",
+ pop:"khoảng 250 con",pn:"Loài này chỉ sống ở vài núi đá vôi miền Bắc Việt Nam, như ở Ninh Bình. Nhờ được bảo vệ, số lượng đã tăng lên một chút.",
+ say:"The langur has a white bottom.",
+ eco:"Voọc ăn lá và quả, rồi rải hạt giống trong rừng đá vôi. Rừng khỏe thì nguồn nước và nhiều loài khác cũng khỏe.",
+ truth:["Voọc từng bị săn bắt để nấu cao, vì có người tin rằng cao khỉ là thuốc bổ. Điều này không có bằng chứng khoa học.","Voọc cũng mất nhà vì rừng đá vôi bị khai thác đá và đốt nương.","Nhờ những người bảo vệ rừng, voọc đang đông lên dần. Cảm ơn các cô chú kiểm lâm nhé!"]},
+{id:"hoguom",e:"🐢",en:"Giant softshell turtle",ipa:"/ˈdʒaɪənt ˈsɒftʃel ˈtɜːrtl/",vi:"Rùa Hồ Gươm",c:"#d8f3dc",st:"Cực kỳ nguy cấp",k:"cr",
+ pop:"chỉ còn vài con trên thế giới",pn:"Cụ rùa Hồ Gươm nổi tiếng với truyền thuyết trả gươm thần cho Long Quân. Cụ đã mất vào năm 2016, và loài rùa này hiện rất hiếm.",
+ say:"The old turtle lives in the lake.",
+ eco:"Rùa mai mềm ăn cá, ốc và những sinh vật dưới đáy hồ, giúp nước hồ cân bằng và sạch hơn. Rùa biến mất thì hồ cũng mất đi người bạn gìn giữ.",
+ truth:["Rùa có thể mắc vào lưới và lưỡi câu của người đánh cá, rồi bị thương hoặc chết.","Nước hồ bẩn vì rác và hóa chất khiến rùa bị ốm. Bờ hồ bị lấn để xây dựng nên rùa cũng mất chỗ đẻ trứng.","Trước đây rùa còn bị săn bắt để lấy thịt và làm thuốc theo những niềm tin sai.","Cậu giúp được bằng cách không xả rác xuống hồ, và kể cho mọi người nghe truyền thuyết rùa thần nhé."]});
+function pang(){var s='<svg class="ic" viewBox="0 0 100 100" aria-hidden="true"><path d="M16 60 Q2 66 4 80 Q12 70 22 72Z" fill="#8a5a3a"/><ellipse cx="50" cy="58" rx="38" ry="21" fill="#a9744f"/>';for(var y=44;y<76;y+=7)for(var x=20+((y/7|0)%2)*4;x<82;x+=8){if(Math.pow((x-50)/36,2)+Math.pow((y-58)/19,2)<1)s+='<circle cx="'+x+'" cy="'+y+'" r="4.2" fill="#c08d62" stroke="#7c5232" stroke-width="1.2"/>'}return s+'<rect x="30" y="74" width="9" height="11" rx="4" fill="#7c5232"/><rect x="60" y="74" width="9" height="11" rx="4" fill="#7c5232"/><ellipse cx="86" cy="60" rx="11" ry="9" fill="#e3c19c"/><path d="M93 58 L100 63 L93 66Z" fill="#e3c19c"/><circle cx="89" cy="56" r="2" fill="#2b2a33"/></svg>'}
+function ico(a){return a.svg?pang():a.e}
+function shuf(x){for(var i=x.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=x[i];x[i]=x[j];x[j]=t}return x}
+function viOK(){try{var v=speechSynthesis.getVoices();return !v.length||v.some(function(x){return x.lang.toLowerCase().indexOf("vi")==0})}catch(e){return false}}
+var QZ;
+function startQuiz(){last=document.getElementById("qbtn");QZ={i:0,s:0,q:shuf(A.slice()).slice(0,6).map(function(a,i){return{a:a,t:i%3}})};ov.classList.add("on");document.body.style.overflow="hidden";showQ()}
+function showQ(){var q=QZ.q[QZ.i],a=q.a,o=shuf([a].concat(shuf(A.filter(function(b){return b!==a})).slice(0,2)));
+ var h='<button class="x" aria-label="Đóng">✕</button><div class="qh">Câu '+(QZ.i+1)+'/6 · ⭐ '+QZ.s+'</div><div class="hero" style="background:'+a.c+'">';
+ if(q.t==0)h+='<div class="e">'+ico(a)+'</div><div class="vi">Bạn này tiếng Anh là gì nhỉ?</div>';
+ if(q.t==1)h+='<div class="vi">Nghe nhé! Tớ đang gọi tên bạn nào?</div><button class="btn" id="ql">🔊 Nghe lại</button>';
+ if(q.t==2)h+='<div class="big">'+a.en+'</div><div class="vi">Tên tiếng Việt của bạn này là gì nhỉ?</div><button class="btn alt" id="ql">🔊 Nghe</button>';
+ h+='</div><div class="opts'+(q.t==1?' pics':'')+'">'+o.map(function(b,i){return'<button class="opt" data-i="'+i+'">'+(q.t==0?b.en:q.t==1?ico(b):b.vi)+'</button>'}).join("")+'</div><div id="fb"></div>';
+ sh.innerHTML=h;sh.scrollTop=0;sh.querySelector(".x").onclick=close;
+ var l=document.getElementById("ql");if(l)l.onclick=function(){say(a.en)};if(q.t==1)setTimeout(function(){say(a.en)},300);
+ sh.querySelectorAll(".opt").forEach(function(btn){btn.onclick=function(){var ok=o[+btn.dataset.i]===a;sh.querySelectorAll(".opt").forEach(function(x){x.disabled=true;if(o[+x.dataset.i]===a)x.classList.add("ok")});if(!ok)btn.classList.add("no");if(ok)QZ.s++;
+  var last6=QZ.i==5;document.getElementById("fb").innerHTML='<div class="msg">'+(ok?"Giỏi quá! 🎉":"Gần đúng rồi! Đáp án là "+(q.t==2?a.vi:a.en))+'</div><div style="text-align:center"><button class="btn" id="nx">'+(last6?"Xem điểm":"Câu tiếp")+'</button></div>';
+  say(a.en);document.getElementById("nx").onclick=function(){QZ.i++;if(QZ.i<6)showQ();else endQ()}}})}
+function endQ(){var s=QZ.s,m=s>=5?"Cậu giỏi tuyệt vời! Cậu là chiến binh bảo vệ muông thú rồi!":s>=3?"Cậu làm tốt lắm! Mình học thêm một chút nữa nhé.":"Không sao đâu! Cậu hãy bấm vào từng bạn động vật rồi chơi lại nha.";
+ sh.innerHTML='<button class="x" aria-label="Đóng">✕</button><div class="hero" style="background:#ffd166;margin-top:20px"><div class="e">🏆</div><div class="big">'+s+'/6</div><div class="vi">'+m+'</div><button class="btn" id="again">Chơi lại</button></div>';sh.querySelector(".x").onclick=close;document.getElementById("again").onclick=startQuiz}
+document.getElementById("qbtn").onclick=startQuiz;
+var g=document.getElementById("grid"),ov=document.getElementById("ov"),sh=document.getElementById("sheet"),last=null;
+function say(t,l){try{if(!window.speechSynthesis)return;speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang=l||"en-US";u.rate=.8;u.pitch=1.1;speechSynthesis.speak(u)}catch(e){}}
+function esc(s){return s.replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+A.forEach(function(a,i){var b=document.createElement("button");b.className="tile";b.style.background=a.c;b.setAttribute("aria-label",a.vi+" - "+a.en);
+b.innerHTML='<span class="e">'+ico(a)+'</span><span class="n">'+a.en+'</span><span class="v">'+a.vi+'</span>';
+b.onclick=function(){last=b;open(a)};g.appendChild(b)});
+function open(a){
+ var h='<button class="x" aria-label="Đóng">✕</button><div class="hero" style="background:'+a.c+'"><div class="e">'+ico(a)+'</div><div class="big">'+a.en+'</div><div class="ipa">'+a.ipa+'</div><div class="vi">'+a.vi+'</div><button class="btn" id="sp">🔊 Nghe nè</button> <button class="btn alt" id="sv">🗣️ Tiếng Việt</button><div class="say">“'+a.say+'”</div></div>';
+ h+='<div class="box"><h3>Còn bao nhiêu bạn?</h3><span class="badge '+a.k+'">'+a.st+'</span><div class="num">'+a.pop+'</div><div>'+a.pn+'</div></div>';
+ h+='<div class="box eco"><h3>Nếu bạn ấy biến mất thì sao?</h3><div>'+a.eco+'</div></div>';
+ if(a.truth){h+='<div class="box sad"><h3>Điều buồn mà cậu nên biết</h3><div>Tớ sẽ nói nghiêm túc nhé, vì chuyện này rất quan trọng.</div><ul>'+a.truth.map(function(t){return"<li>"+t+"</li>"}).join("")+'</ul></div>'}
+ if(a.good){h+='<div class="box good"><h3>Tin vui!</h3><div>'+a.good+'</div></div>'}
+ h+='<div class="box good"><h3>Cậu giúp bạn ấy bằng cách nào?</h3><ul><li>Kể cho bạn bè và gia đình nghe điều cậu vừa học.</li><li>Không mua đồ làm từ động vật hoang dã.</li><li>Giữ gìn rừng và biển sạch sẽ.</li></ul></div>';
+ sh.innerHTML=h;ov.classList.add("on");sh.scrollTop=0;document.body.style.overflow="hidden";
+ sh.querySelector(".x").onclick=close;document.getElementById("sp").onclick=function(){say(a.en+". "+a.say)};
+ var sv=document.getElementById("sv");sv.onclick=function(){if(!viOK()){sv.textContent="Máy chưa có giọng Việt";return}say(a.vi+". Tình trạng: "+a.st+". Số lượng: "+a.pop+". "+a.pn+" "+a.eco+(a.truth?" Điều buồn cần biết. "+a.truth.join(" "):""),"vi-VN")};
+ setTimeout(function(){say(a.en)},250);sh.querySelector(".x").focus();
+}
+function close(){ov.classList.remove("on");document.body.style.overflow="";try{speechSynthesis.cancel()}catch(e){}if(last)last.focus()}
+ov.addEventListener("click",function(e){if(e.target===ov)close()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});
+</script>
+</body>
+</html>
